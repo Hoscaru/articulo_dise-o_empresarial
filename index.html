@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Enfoques, Estructuras y Diseños Organizacionales</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; line-height: 1.6; color: #1a1a1a; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: #fff; box-shadow: 0 0 30px rgba(0,0,0,0.1); }
+        header { background: linear-gradient(135deg, #1a365d, #2c5282); color: white; padding: 40px 60px; text-align: center; }
+        h1.title { font-size: 28pt; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
+        .authors { font-size: 14pt; font-style: italic; margin-bottom: 15px; }
+        .authors span { display: block; margin: 5px 0; }
+        .institution { font-size: 11pt; opacity: 0.9; margin-bottom: 25px; }
+        .abstract { background: rgba(255,255,255,0.1); padding: 25px; border-radius: 8px; text-align: left; }
+        .abstract-title { font-weight: 700; font-size: 14pt; margin-bottom: 10px; text-transform: uppercase; }
+        .abstract-text { font-size: 11pt; text-align: justify; line-height: 1.8; }
+        .keywords { margin-top: 15px; font-size: 11pt; font-style: italic; }
+        .keywords strong { font-style: normal; }
+        .body { display: grid; grid-template-columns: 1fr 300px; }
+        main { padding: 50px 60px; border-right: 1px solid #e0e0e0; }
+        aside { background: #f8f9fa; padding: 30px 25px; }
+        section { margin-bottom: 40px; }
+        h2.section-title { font-size: 16pt; font-weight: 700; color: #1a365d; border-bottom: 2px solid #2c5282; padding-bottom: 10px; margin-bottom: 20px; text-transform: uppercase; }
+        h3.subsection-title { font-size: 14pt; font-weight: 600; color: #2c5282; margin-top: 25px; margin-bottom: 15px; }
+        p { text-align: justify; margin-bottom: 15px; text-indent: 30px; }
+        .content-block { background: linear-gradient(135deg, #f0f7ff, #e8f4fd); border-left: 4px solid #2c5282; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .content-block h4 { color: #1a365d; font-size: 13pt; margin-bottom: 12px; }
+        .content-block p { font-size: 11pt; text-indent: 0; }
+        .content-block ul { margin-left: 20px; }
+        .content-block li { margin-bottom: 8px; font-size: 11pt; }
+        .figure { margin: 30px 0; text-align: center; }
+        .figure img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .figure-caption { font-size: 11pt; font-style: italic; color: #555; margin-top: 12px; text-align: center; }
+        .figure-caption strong { font-weight: 600; font-style: normal; }
+        .references { background: #fafafa; padding: 40px 60px; border-top: 3px solid #1a365d; }
+        .ref-title { font-size: 16pt; font-weight: 700; color: #1a365d; margin-bottom: 25px; text-transform: uppercase; }
+        .ref-item { font-size: 11pt; text-indent: -30px; padding-left: 30px; margin-bottom: 15px; line-height: 1.8; }
+        .ref-item .author { font-weight: 600; }
+        .ref-item .year { color: #666; }
+        .ref-item .title { font-style: italic; }
+        .sidebar-section { margin-bottom: 30px; }
+        .sidebar-title { font-size: 12pt; font-weight: 700; color: #1a365d; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 15px; text-transform: uppercase; }
+        .sidebar-content { font-size: 10pt; color: #555; }
+        .sidebar-content ul { list-style: none; padding: 0; }
+        .sidebar-content li { padding: 8px 0; border-bottom: 1px dashed #e0e0e0; }
+        .note-box { background: #fffde7; border: 1px solid #ffd54f; padding: 15px; border-radius: 6px; font-size: 10pt; }
+        .note-box strong { display: block; color: #f57f17; margin-bottom: 8px; }
+        .term-list { list-style: none; padding: 0; }
+        .term-list li { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+        .term-list li strong { color: #1a365d; }
+        footer { background: #1a365d; color: white; text-align: center; padding: 20px; font-size: 10pt; }
+        @media (max-width: 900px) { .body { grid-template-columns: 1fr; } main { border-right: none; } aside { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Enfoques, Estructuras y Diseños Organizacionales</h1>
+            <div class="authors">
+                <span>[Nombre del Autor Principal]</span>
+                <span>[Co-Autor 1]</span>
+                <span>[Co-Autor 2]</span>
+            </div>
+            <div class="institution">
+                [Nombre de la Universidad]<br>
+                [Departamento/Programa de Postgrado]<br>
+                [Ciudad, País] - [Año]
+            </div>
+            <div class="abstract">
+                <div class="abstract-title">Resumen</div>
+                <p class="abstract-text">[Incluir resumen del artículo aquí. El resumen debe ser una síntesis concisa del contenido, abarcando el propósito, metodología, resultados principales y conclusiones. Máximas 250 palabras.]</p>
+                <div class="keywords"><strong>Palabras clave:</strong> [Palabra clave 1], [Palabra clave 2], [Palabra clave 3], [Palabra clave 4], [Palabra clave 5]</div>
+            </div>
+        </header>
+        <div class="body">
+            <main>
+                <section>
+                    <h2 class="section-title">1. Introducción</h2>
+                    <div class="content-block">
+                        <h4>Evolución y Tendencias del Diseño Organizacional en la Era Global</h4>
+                        <p>Un análisis de los enfoques tradicionales hacia las estructuras flexibles y en red</p>
+                    </div>
+                    <p>[Sustituye este texto con tu introducción. La introducción debe presentar el tema, establecer la importancia del diseño organizacional y anticipar la estructura del artículo.]</p>
+                    <p>El diseño organizacional se define como el proceso de elegir e implantar estructuras capaces de organizar y articular los recursos de una empresa para alcanzar su misión y objetivos globales. En la actualidad, este concepto es considerado el "ADN" de la organización, ya que determina cómo se divide, organiza y coordina el trabajo para operar con eficiencia y eficacia. debido a que vivimos en una sociedad de organizaciones donde las empresas operan en entornos cambiantes y complejos, comprender la estructura organizacional —tanto formal como informal— es vital para enfrentar los desafíos de la incertidumbre y la competitividad moderna.</p>
+                    <div class="figure">
+                        <img src="https://via.placeholder.com/700x350?text=Figura+1:+Evolucion+del+Diseno+Organizacional" alt="Evolucion">
+                        <p class="figure-caption"><strong>Figura 1:</strong> Evolución histórica del diseño organizacional. Se observa la transición desde modelos burocráticos tradicionales hacia estructuras flexibles y en red. Fuente: Elaboración propia.</p>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="section-title">2. Revisión de Enfoques y Modelos Fundamentales</h2>
+                    <p>[Sustituye esta sección con tu revisión de la literatura sobre los enfoques teóricos del diseño organizacional.]</p>
+                    <h3 class="subsection-title">2.1 Modelos Tradicionales: Mecanicista vs. Orgánico</h3>
+                    <p>Históricamente, el diseño organizacional ha oscilado entre dos extremos: el modelo mecanicista y el modelo orgánico.</p>
+                    <div class="content-block">
+                        <h4>Modelo Mecanicista</h4>
+                        <p>Basado en teorías clásicas, se caracteriza por:</p>
+                        <ul>
+                            <li>Estructura burocrática y jerarquía rígida</li>
+                            <li>Centralización de decisiones</li>
+                            <li>División minuciosa del trabajo</li>
+                            <li>Formalización exhaustiva de procedimientos</li>
+                        </ul>
+                        <p>Es ideal para entornos estables donde la eficiencia es el objetivo primordial.</p>
+                    </div>
+                    <div class="content-block">
+                        <h4>Modelo Orgánico</h4>
+                        <p>Se define por su flexibilidad y adaptabilidad:</p>
+                        <ul>
+                            <li>Las tareas se redefinen constantemente</li>
+                            <li>Comunicación horizontal y fluida</li>
+                            <li>Autoridad basada en el conocimiento</li>
+                            <li>Adaptación continua al entorno</li>
+                        </ul>
+                        <p>Este modelo es fundamental para organizaciones que requieren innovación y creatividad.</p>
+                    </div>
+                    <div class="figure">
+                        <img src="https://via.placeholder.com/700x400?text=Figura+2:+Comparativa+Mecanicista+vs+Organico" alt="Comparativa">
+                        <p class="figure-caption"><strong>Figura 2:</strong> Comparativa entre el modelo mecanicista y el modelo orgánico. Se representan las características del modelo tradicional y las del modelo adaptativo. Fuente: Adaptado de Burns y Stalker (1961).</p>
+                    </div>
+                    <h3 class="subsection-title">2.2 Perspectivas Teóricas Clásicas</h3>
+                    <p>[Añade aquí las perspectivas de autores clásicos como Weber (burocracia), Taylor (administración científica), Fayol (funciones administrativas) y otros teóricos relevantes.]</p>
+                    <div class="content-block">
+                        <h4>Teorías Clásicas a Considerar</h4>
+                        <ul>
+                            <li><strong>Max Weber:</strong> Teoría de la burocracia racional</li>
+                            <li><strong>Frederick Taylor:</strong> Administración científica</li>
+                            <li><strong>Henri Fayol:</strong> Funciones administrativas</li>
+                            <li><strong>Chester Barnard:</strong> Teoría de las organizaciones</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="section-title">3. Análisis de Estructuras Modernas</h2>
+                    <p>[Sustituye con tu análisis de las estructuras organizacionales contemporáneas y sus aplicaciones en el contexto actual.]</p>
+                    <h3 class="subsection-title">3.1 Dimensiones Estructurales Básicas</h3>
+                    <p>Para que una estructura funcione, debe equilibrar dimensiones básicas como la formalización (reglas y procedimientos), la centralización (dónde se toman las decisiones) y la departamentalización (agrupación de actividades).</p>
+                    <div class="figure">
+                        <img src="https://via.placeholder.com/700x350?text=Figura+3:+Dimensiones+Estructurales" alt="Dimensiones">
+                        <p class="figure-caption"><strong>Figura 3:</strong> Las tres dimensiones fundamentales del diseño organizacional: formalización, centralización y departamentalización. Fuente: Elaboración propia.</p>
+                    </div>
+                    <h3 class="subsection-title">3.2 Estructuras Organizacionales Tradicionales</h3>
+                    <div class="content-block">
+                        <h4>Estructura Funcional</h4>
+                        <p>Agrupa a especialistas en actividades similares (finanzas, marketing, producción), permitiendo economías de escala y especialización técnica.</p>
+                    </div>
+                    <div class="content-block">
+                        <h4>Estructura Divisional / Por Producto</h4>
+                        <p>Organiza a la empresa en unidades que reúnen a personas involucradas con un tipo específico de producto o mercado. Adecuada para organizaciones diversificadas.</p>
+                    </div>
+                    <div class="content-block">
+                        <h4>Estructura Matricial</h4>
+                        <p>Combina las formas funcional y por productos, creando una doble línea de autoridad para coordinar tareas complejas e interdependientes.</p>
+                    </div>
+                    <div class="figure">
+                        <img src="https://via.placeholder.com/700x400?text=Figura+4:+Tipos+de+Estructuras+Organizacionales" alt="Tipos">
+                        <p class="figure-caption"><strong>Figura 4:</strong> Comparación de estructuras organizacionales: funcional, divisional y matricial. Se observan las diferencias en jerarquía y líneas de autoridad. Fuente: Adaptado de Chiavenato (2009).</p>
+                    </div>
+                    <h3 class="subsection-title">3.3 Nuevas Tendencias: Organizaciones en Red y Virtuales</h3>
+                    <p>Las organizaciones modernas están abandonando las jerarquías rígidas en favor de modelos más ágiles. Según Henry Mintzberg, una organización se compone de elementos clave como el ápice estratégico y el núcleo de operaciones, pero las tendencias actuales apuntan hacia la adhocracia y las estructuras en red.</p>
+                    <div class="content-block">
+                        <h4>Organización en Red</h4>
+                        <p>Funciona de manera descentralizada, subcontratando operaciones no esenciales y enfocándose en su negocio central. Promueve la flexibilidad y reducción de costos.</p>
+                    </div>
+                    <div class="content-block">
+                        <h4>Organización Virtual</h4>
+                        <p>Permite que las personas colaboren sin coincidir físicamente en tiempo o espacio, utilizando la tecnología de la información como sistema nervioso central.</p>
+                    </div>
+                    <div class="figure">
+                        <img src="https://via.placeholder.com/700x350?text=Figura+5:+Organizaciones+en+Red+y+Virtuales" alt="Redes">
+                        <p class="figure-caption"><strong>Figura 5:</strong> Modelo de organización en red y virtual. Se representa la conexión entre nodos operativos y el núcleo estratégico sin fronteras físicas. Fuente: Elaboración propia.</p>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="section-title">4. Factores de Diseño Organizacional</h2>
+                    <p>[Añade aquí los factores de contingencia que influyen en el diseño organizacional: entorno, tecnología, estrategia, tamaño, cultura organizacional, etc.]</p>
+                    <div class="content-block">
+                        <h4>Factores de Contingencia</h4>
+                        <ul>
+                            <li><strong>Entorno:</strong> Estabilidad, complejidad e incertidumbre del mercado</li>
+                            <li><strong>Tecnología:</strong> Sistemas de producción y comunicación disponibles</li>
+                            <li><strong>Estrategia:</strong> Objetivos y planes de la organización</li>
+                            <li><strong>Tamaño:</strong> Número de empleados y nivel de complejidad</li>
+                            <li><strong>Cultura:</strong> Valores y creencias organizacionales</li>
+                        </ul>
+                    </div>
+                    <div class="figure">
+                        <img src="https://via.placeholder.com/700x400?text=Figura+6:+Factores+de+Contingencia" alt="Contingencia">
+                        <p class="figure-caption"><strong>Figura 6:</strong> Factores de contingencia que determinan la estructura organizacional óptima. Fuente: Adaptado de Donaldson (2001).</p>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="section-title">5. Conclusiones</h2>
+                    <p>[Sustituye con tus conclusiones. Resume los hallazgos principales y sus implicaciones para la práctica del diseño organizacional.]</p>
+                    <div class="content-block">
+                        <h4>Puntos Clave</h4>
+                        <p>En conclusión, no existe una estructura organizacional única u óptima para todas las empresas; el diseño más adecuado depende de factores de contingencia como el entorno, la tecnología y la estrategia.</p>
+                        <p>Mientras que las estructuras tradicionales proporcionaron orden y control durante la era industrial, la era de la información exige flexibilidad, trabajo en equipo y una visión sistémica.</p>
+                        <p>El éxito de las organizaciones actuales reside en su capacidad para transformarse en entidades de aprendizaje que valoran el capital intelectual sobre los activos tangibles.</p>
+                    </div>
+                </section>
+            </main>
+            <aside>
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Datos del Artículo</h3>
+                    <div class="sidebar-content">
+                        <ul>
+                            <li><strong>Estado:</strong> Borrador</li>
+                            <li><strong>Fecha:</strong> [Fecha actual]</li>
+                            <li><strong>Palabras:</strong> [Conteo]</li>
+                            <li><strong>Figuras:</strong> 6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Estructura del Artículo</h3>
+                    <div class="sidebar-content">
+                        <ul>
+                            <li>1. Introducción</li>
+                            <li>2. Revisión de Enfoques</li>
+                            <li>3. Análisis de Estructuras</li>
+                            <li>4. Factores de Diseño</li>
+                            <li>5. Conclusiones</li>
+                            <li>Referencias</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Autores Clásicos</h3>
+                    <div class="sidebar-content">
+                        <ul class="term-list">
+                            <li><strong>Mintzberg (1984)</strong><br>Tipos de estructuras</li>
+                            <li><strong>Weber (1947)</strong><br>Burocracia</li>
+                            <li><strong>Chiavenato (2009)</strong><br>Comportamiento organizacional</li>
+                            <li><strong>Burns & Stalker (1961)</strong><br>Mecanicismo vs. Organicismo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Notas Personales</h3>
+                    <div class="note-box">
+                        <strong>Pendiente:</strong>
+                        [Espacio para tus notas de clase e investigación]
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Imágenes a Insertar</h3>
+                    <div class="sidebar-content">
+                        <ul>
+                            <li><strong>Fig. 1:</strong> Evolución histórica</li>
+                            <li><strong>Fig. 2:</strong> Comparativa modelos</li>
+                            <li><strong>Fig. 3:</strong> Dimensiones</li>
+                            <li><strong>Fig. 4:</strong> Tipos estructuras</li>
+                            <li><strong>Fig. 5:</strong> Redes/virtuales</li>
+                            <li><strong>Fig. 6:</strong> Contingencias</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <section class="references">
+            <h2 class="ref-title">Referencias</h2>
+            <p class="ref-item"><span class="author">Burns, T., & Stalker, G. M.</span> <span class="year">(1961)</span>. <span class="title">The management of innovation</span>. London: Tavistock Publications.</p>
+            <p class="ref-item"><span class="author">Chiavenato, I.</span> <span class="year">(2009)</span>. <span class="title">Comportamiento organizacional: La dinámica del éxito en las organizaciones</span> (2ª ed.). México: McGraw-Hill.</p>
+            <p class="ref-item"><span class="author">Chiavenato, I.</span> <span class="year">(2019)</span>. <span class="title">Introducción a la teoría general de la administración</span> (10ª ed.). México: McGraw-Hill.</p>
+            <p class="ref-item"><span class="author">Donaldson, L.</span> <span class="year">(2001)</span>. <span class="title">The contingency theory of organizations</span>. Thousand Oaks, CA: Sage Publications.</p>
+            <p class="ref-item"><span class="author">Fayol, H.</span> <span class="year">(1916)</span>. <span class="title">Administration industrielle et générale</span>. Paris: Dunod.</p>
+            <p class="ref-item"><span class="author">Mintzberg, H.</span> <span class="year">(1984)</span>. <span class="title">La estructuración de las organizaciones</span>. Barcelona: Ariel. <em>(Resumen por Enric Brull y M. Gil Estallo)</em>.</p>
+            <p class="ref-item"><span class="author">Porto Solano, A. F., & Angarita Álvarez, L. J.</span> <span class="year">(2017)</span>. Estructuras organizacionales: Nuevas tendencias. <span class="title">Revista AD-GNOSIS</span>, 6(1), 45-62.</p>
+            <p class="ref-item"><span class="author">Taylor, F. W.</span> <span class="year">(1911)</span>. <span class="title">Principles of scientific management</span>. New York: Harper & Brothers.</p>
+            <p class="ref-item"><span class="author">Weber, M.</span> <span class="year">(1947)</span>. <span class="title">The theory of social and economic organization</span> (A. M. Henderson & T. Parsons, Trans.). New York: Oxford University Press.</p>
+            <p class="ref-item"><span class="author">Wikipedia.</span> <span class="year">(s.f.)</span>. Estructura organizacional. Recuperado de https://es.wikipedia.org/wiki/Estructura_organizacional</p>
+        </section>
+        <footer>
+            <p>Artículo Académico de Postgrado | Enfoques, Estructuras y Diseños Organizacionales</p>
+            <p>[Año] - [Universidad] - [Programa]</p>
+        </footer>
+    </div>
+</body>
+</html>
