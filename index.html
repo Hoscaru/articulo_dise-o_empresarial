@@ -6,51 +6,55 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; line-height: 1.6; color: #1a1a1a; background: #f5f5f5; }
-        .container { max-width: 1200px; margin: 0 auto; background: #fff; box-shadow: 0 0 30px rgba(0,0,0,0.1); }
-        header { background: linear-gradient(135deg, #1a365d, #2c5282); color: white; padding: 40px 60px; text-align: center; }
-        h1.title { font-size: 28pt; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
-        .authors { font-size: 14pt; font-style: italic; margin-bottom: 15px; }
-        .authors span { display: block; margin: 5px 0; }
-        .institution { font-size: 11pt; opacity: 0.9; margin-bottom: 25px; }
-        .abstract { background: rgba(255,255,255,0.1); padding: 25px; border-radius: 8px; text-align: left; }
-        .abstract-title { font-weight: 700; font-size: 14pt; margin-bottom: 10px; text-transform: uppercase; }
-        .abstract-text { font-size: 11pt; text-align: justify; line-height: 1.8; }
-        .keywords { margin-top: 15px; font-size: 11pt; font-style: italic; }
+        .container { max-width: 850px; margin: 0 auto; background: #fff; box-shadow: 0 0 30px rgba(0,0,0,0.1); }
+        header { background: linear-gradient(135deg, #1a365d, #2c5282); color: white; padding: 30px 60px; text-align: center; }
+        h1.title { font-size: 24pt; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; }
+        .authors { font-size: 14pt; font-style: italic; margin-bottom: 10px; }
+        .institution { font-size: 11pt; opacity: 0.9; margin-bottom: 20px; }
+        .abstract { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; text-align: left; }
+        .abstract-title { font-weight: 700; font-size: 13pt; margin-bottom: 8px; text-transform: uppercase; }
+        .abstract-text { font-size: 10pt; text-align: justify; line-height: 1.6; }
+        .keywords { margin-top: 12px; font-size: 10pt; font-style: italic; }
         .keywords strong { font-style: normal; }
-        .body { display: grid; grid-template-columns: 1fr 300px; }
-        main { padding: 50px 60px; border-right: 1px solid #e0e0e0; }
-        aside { background: #f8f9fa; padding: 30px 25px; }
-        section { margin-bottom: 40px; }
-        h2.section-title { font-size: 16pt; font-weight: 700; color: #1a365d; border-bottom: 2px solid #2c5282; padding-bottom: 10px; margin-bottom: 20px; text-transform: uppercase; }
-        h3.subsection-title { font-size: 14pt; font-weight: 600; color: #2c5282; margin-top: 25px; margin-bottom: 15px; }
+        .body { display: block; }
+        main { 
+            padding: 40px 50px; 
+            border-right: none;
+            column-count: 2;
+            column-gap: 30px;
+        }
+        section { 
+            margin-bottom: 30px; 
+        }
+        h2.section-title { 
+            font-size: 14pt; font-weight: 700; color: #1a365d; border-bottom: 2px solid #2c5282; padding-bottom: 8px; margin-bottom: 15px; text-transform: uppercase; 
+        }
+        h3.subsection-title { 
+            font-size: 12pt; font-weight: 600; color: #2c5282; margin-top: 15px; margin-bottom: 10px; 
+        }
         p { text-align: justify; margin-bottom: 15px; text-indent: 30px; }
+        .content-block { background: linear-gradient(135deg, #f0f7ff, #e8f4fd); border-left: 4px solid #2c5282; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .content-block h4 { color: #1a365d; font-size: 13pt; margin-bottom: 12px; }
+        .content-block p { font-size: 11pt; text-indent: 0; }
+        .content-block ul { margin-left: 20px; }
+        .content-block li { margin-bottom: 8px; font-size: 11pt; }
+        .figure { margin: 15px 0; text-align: center; }
+        .figure img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .figure-caption { font-size: 11pt; font-style: italic; color: #555; margin-top: 12px; text-align: center; }
+        .figure-caption strong { font-weight: 600; font-style: normal; }
+        .references { background: #fafafa; padding: 30px 50px; border-top: 3px solid #1a365d; }
+        .ref-title { font-size: 14pt; font-weight: 700; color: #1a365d; margin-bottom: 20px; text-transform: uppercase; }
+        .ref-item { font-size: 11pt; text-indent: -30px; padding-left: 30px; margin-bottom: 15px; line-height: 1.8; }
+        .ref-item .author { font-weight: 600; }
+        .ref-item .year { color: #666; }
+        .ref-item .title { font-style: italic; }
         .content-block { background: linear-gradient(135deg, #f0f7ff, #e8f4fd); border-left: 4px solid #2c5282; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
         .content-block h4 { color: #1a365d; font-size: 13pt; margin-bottom: 12px; }
         .content-block p { font-size: 11pt; text-indent: 0; }
         .content-block ul { margin-left: 20px; }
         .content-block li { margin-bottom: 8px; font-size: 11pt; }
         .figure { margin: 30px 0; text-align: center; }
-        .figure img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .figure-caption { font-size: 11pt; font-style: italic; color: #555; margin-top: 12px; text-align: center; }
-        .figure-caption strong { font-weight: 600; font-style: normal; }
-        .references { background: #fafafa; padding: 40px 60px; border-top: 3px solid #1a365d; }
-        .ref-title { font-size: 16pt; font-weight: 700; color: #1a365d; margin-bottom: 25px; text-transform: uppercase; }
-        .ref-item { font-size: 11pt; text-indent: -30px; padding-left: 30px; margin-bottom: 15px; line-height: 1.8; }
-        .ref-item .author { font-weight: 600; }
-        .ref-item .year { color: #666; }
-        .ref-item .title { font-style: italic; }
-        .sidebar-section { margin-bottom: 30px; }
-        .sidebar-title { font-size: 12pt; font-weight: 700; color: #1a365d; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-bottom: 15px; text-transform: uppercase; }
-        .sidebar-content { font-size: 10pt; color: #555; }
-        .sidebar-content ul { list-style: none; padding: 0; }
-        .sidebar-content li { padding: 8px 0; border-bottom: 1px dashed #e0e0e0; }
-        .note-box { background: #fffde7; border: 1px solid #ffd54f; padding: 15px; border-radius: 6px; font-size: 10pt; }
-        .note-box strong { display: block; color: #f57f17; margin-bottom: 8px; }
-        .term-list { list-style: none; padding: 0; }
-        .term-list li { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
-        .term-list li strong { color: #1a365d; }
-        footer { background: #1a365d; color: white; text-align: center; padding: 20px; font-size: 10pt; }
-        @media (max-width: 900px) { .body { grid-template-columns: 1fr; } main { border-right: none; } aside { display: none; } }
+        @media (max-width: 900px) { main { column-count: 1; } }
     </style>
 </head>
 <body>
@@ -63,12 +67,12 @@
             <div class="institution">
                 Universidad de Oriente (UDO)<br>
                 Programa de Postgrado en Ciencias Administrativas<br>
-                Ciudad Bolívar, Venezuela - 2026
+                Anzoátegui, Venezuela - 2026
             </div>
             <div class="abstract">
                 <div class="abstract-title">Resumen</div>
-                <p class="abstract-text">El presente artículo examina la transición paradigmática desde los modelos mecanicistas de organización hacia las configuraciones orgánicas, fenómeno acelerado por la volatilidad de los entornos contemporáneos y la digitalización de los procesos productivos. Partiendo de la teoría de la contingencia, se analiza cómo las organizaciones enfrentan el dilema estructural entre la eficiencia operativa y la adaptabilidad estratégica, tensión exacerbada por el isomorfismo institucional que impulse la homogeneización de prácticas administrativas. El objetivo central consiste en determinar los factores críticos que influyen en la eficiencia del diseño estructural en la era digital, considerando las configuraciones burocráticas heredadas del pensamiento weberiano y su permeabilidad hacia modelos más flexibles. Se empleó una revisión sistemática de la literatura que integra las perspectivas clásicas de Weber, Taylor, Fayol y Barnard con los enfoques contemporáneos de Mintzberg, Chandler y la teoría de la contingencia. Los resultados evidencian que el diseño organizacional óptimo no responde a una fórmula universal, sino que emerge de la articulación dinámica entre estrategia, entorno, tecnología y cultura organizacional. Se concluye que la capacidad de gestionar simultáneamente la explotación de recursos existentes y la exploración de nuevas competencias constituye el fundamento de la competitividad sostenible en contextos de alta incertidumbre.</p>
-                <div class="keywords"><strong>Palabras clave:</strong> Isomorfismo institucional, Configuraciones estructurales, Entornos volátiles, Ambidestreza organizacional, Racionalidad sustantiva</div>
+                <p class="abstract-text">El presente artículo examina la transición paradigmática desde los modelos mecanicistas de organización hacia las configuraciones orgánicas, fenómeno acelerado por la volatilidad de los entornos contemporáneos y la digitalización de los procesos productivos. Partiendo de la teoría de la contingencia, se analiza cómo las organizaciones enfrentan el dilema estructural entre la eficiencia operativa y la adaptabilidad estratégica. El objetivo central consiste en determinar los factores críticos que influyen en la eficiencia del diseño estructural en la era digital, considerando las configuraciones burocráticas heredadas del pensamiento weberiano y su permeabilidad hacia modelos más flexibles. Se empleó una revisión sistemática de la literatura que integra las perspectivas clásicas de Weber, Taylor, Fayol y Barnard con los enfoques contemporáneos de Mintzberg, Chandler y la teoría de la contingencia. Los resultados evidencian que el diseño organizacional óptimo no responde a una fórmula universal, sino que emerge de la articulación dinámica entre estrategia, entorno, tecnología y cultura organizacional. Se concluye que la capacidad de gestionar simultáneamente la explotación de recursos existentes y la exploración de nuevas competencias constituye el fundamento de la competitividad sostenible en contextos de alta incertidumbre.</p>
+                <div class="keywords"><strong>Palabras clave:</strong> Configuraciones estructurales, Entornos volátiles, Ambidestreza organizacional, Racionalidad sustantiva, Diseño organizacional</div>
             </div>
         </header>
         <div class="body">
@@ -76,9 +80,10 @@
                 <section>
                     <h2 class="section-title">1. Introducción</h2>
                     <div class="content-block">
-                        <h4>Evolución y Tendencias del Diseño Organizacional en la Era Global</h4>
-                        <p>Un análisis de los enfoques tradicionales hacia las estructuras flexibles y en red</p>
-                    </div>
+                        <h4>Diseño Organizacional en la Era Global</h4>
+                        <p>"Cada organización tiene su propio diseño y una manera de integrar y asignar recursos para operar con eficiencia y eficacia. El diseño es el ADN de la organización"</p>
+<p><strong>Chiavenato (2019)</strong></p>
+</div>
                     <p>En el complejo escenario global del siglo XXI, caracterizado por la volatilidad económica y la convergencia tecnológica, el diseño organizacional ha dejado de ser una tarea puramente administrativa para convertirse en un imperativo estratégico. No representa meramente una distribución estática de cargos y jerarquías, sino que constituye la arquitectura dinámica que permite a una entidad articular sus recursos, capacidades y cultura en función de sus objetivos globales. La relevancia de este estudio radica en que una estructura mal alineada con el entorno o la estrategia puede sofocar la innovación, ralentizar la toma de decisiones y, en última instancia, comprometer la sostenibilidad de la organización en mercados altamente competitivos.</p>
                     <p>El diseño organizacional se define como el proceso de elegir e implantar estructuras capaces de organizar y articular los recursos de una empresa para alcanzar su misión y objetivos globales. En la actualidad, este concepto es considerado el "ADN" de la organización, ya que determina cómo se divide, organiza y coordina el trabajo para operar con eficiencia y eficacia. debido a que vivimos en una sociedad de organizaciones donde las empresas operan en entornos cambiantes y complejos, comprender la estructura organizacional —tanto formal como informal— es vital para enfrentar los desafíos de la incertidumbre y la competitividad moderna.</p>
                     <div class="figure">
@@ -119,27 +124,53 @@
                         <p class="figure-caption"><strong>Figura 2:</strong> Comparativa entre el modelo mecanicista y el modelo orgánico. Se representan las características del modelo tradicional y las del modelo adaptativo. Fuente: Adaptado de Burns y Stalker (1961).</p>
                     </div>
                     <h3 class="subsection-title">2.2 Perspectivas Teóricas Clásicas</h3>
-                    <p>[Añade aquí las perspectivas de autores clásicos como Weber (burocracia), Taylor (administración científica), Fayol (funciones administrativas) y otros teóricos relevantes.]</p>
+                    <p>Las teorías clásicas establecieron las bases del pensamiento organizacional moderno, definiendo principios que guiaron el desarrollo empresarial durante la Revolución Industrial y principios del siglo XX.</p>
+                    
                     <div class="content-block">
-                        <h4>Teorías Clásicas a Considerar</h4>
+                        <h4>Max Weber: Teoría de la Burocracia Racional</h4>
+                        <p>Weber no veía la "burocracia" como algo lento o ineficiente (como lo usamos hoy), sino como la forma más técnica y precisa de organizar a los seres humanos.</p>
+                        <p style="font-style: italic; border-left: 3px solid #1a365d; padding-left: 15px; margin: 15px 0;">"La razón decisiva que explica el progreso de la organización burocrática ha sido siempre su superioridad técnica sobre cualquier otra forma de organización. Un mecanismo burocrático plenamente desarrollado funciona con respecto a las otras formas de la misma manera que una máquina con respecto a los métodos no mecánicos de producción."</p>
+                        <p style="font-size: 10pt; color: #666;">(Weber, 1947)</p>
+                        <p>Max Weber desarrolló el concepto de burocracia como forma ideal de organización caracterizada por:</p>
                         <ul>
-                            <li><strong>Max Weber:</strong> Teoría de la burocracia racional</li>
-                            <li><strong>Frederick Taylor:</strong> Administración científica</li>
-                            <li><strong>Henri Fayol:</strong> Funciones administrativas</li>
-                            <li><strong>Chester Barnard:</strong> Teoría de las organizaciones</li>
+                            <li>Jerarquía de autoridad claramente definida</li>
+                            <li>Divisiones laborales precisas y especializadas</li>
+                            <li>Sistema de reglas y normas formales que guían el comportamiento</li>
+                            <li>Impersonalidad en las relaciones laborales</li>
+                            <li>Selección y promoción basada en mérito técnico</li>
                         </ul>
+                        <p>Esta estructura busca maximizar la eficiencia mediante la predictibilidad, control y racionalidad en la ejecución de tareas.</p>
                     </div>
+                    
+                    <div class="content-block">
+                        <h4>Frederick Taylor: Administración Científica</h4>
+                        <p>Para Taylor, el diseño organizacional no era una cuestión de opinión, sino de cálculo exacto. Su enfoque se centraba en que la administración debía asumir la responsabilidad de "pensar" el trabajo.</p>
+                        <p style="font-style: italic; border-left: 3px solid #1a365d; padding-left: 15px; margin: 15px 0;">"En el pasado, el hombre ha sido primero; en el futuro, el sistema debe ser primero... El objetivo principal de la administración debe ser asegurar la máxima prosperidad para el patrón, junto con la máxima prosperidad para cada empleado."</p>
+                        <p style="font-size: 10pt; color: #666;">(Taylor, 1911)</p>
+                        <p>Taylor revolucionó la gestión industrial mediante principios basados en la observación científica del trabajo:</p>
+                        <ul>
+                            <li>Estudio científico de cada elemento del trabajo individual</li>
+                            <li>Selección científica y desarrollo sistemático de trabajadores</li>
+                            <li>Cooperación entre trabajadores y dirección asegurando cumplimiento de procedimientos</li>
+                            <li>División equitativa del trabajo entre dirección y obreros</li>
+                        </ul>
+                        <p>Su enfoque busca eliminar ineficiencias mediante estandarización de procesos y optimización de tiempos y movimientos.</p>
+                    </div>
+                    <h3 class="subsection-title">2.3 Perspectivas de Tendencias Emergentes</h3>
+                    <p>La digitalización y la globalización han favorecido la aparición de nuevos enfoques organizacionales que van más allá de los modelos tradicionales. En esta sección se bosquejan brevemente algunas tendencias que están transformando la manera de estructurar las organizaciones.</p>
+                    <ul>
+                        <li><strong>Organizaciones en red:</strong> estructuración descentralizada que enfatiza la colaboración entre unidades autónomas y la integración a través de plataformas digitales.</li>
+                        <li><strong>Organizaciones virtuales:</strong> equipos diseminados geográficamente que operan mediante tecnologías de información y comunicación, reduciendo la dependencia de espacios físicos.</li>
+                        <li><strong>Adhocracias:</strong> estructuras flexibles y temporales orientadas a la innovación, donde se forman equipos multidisciplinarios según la necesidad del proyecto.</li>
+                    </ul>
+                    <p>Estas tendencias, aun cuando coexisten con estructuras tradicionales, evidencian la necesidad de adaptabilidad y aprendizaje continuo en el entorno actual.</p>
                 </section>
                 <section>
                     <h2 class="section-title">3. Análisis de Estructuras Modernas</h2>
-                    <p>[Sustituye con tu análisis de las estructuras organizacionales contemporáneas y sus aplicaciones en el contexto actual.]</p>
-                    <h3 class="subsection-title">3.1 Dimensiones Estructurales Básicas</h3>
-                    <p>Para que una estructura funcione, debe equilibrar dimensiones básicas como la formalización (reglas y procedimientos), la centralización (dónde se toman las decisiones) y la departamentalización (agrupación de actividades).</p>
-                    <div class="figure">
-                        <img src="https://via.placeholder.com/700x350?text=Figura+3:+Dimensiones+Estructurales" alt="Dimensiones">
-                        <p class="figure-caption"><strong>Figura 3:</strong> Las tres dimensiones fundamentales del diseño organizacional: formalización, centralización y departamentalización. Fuente: Elaboración propia.</p>
-                    </div>
-                    <h3 class="subsection-title">3.2 Estructuras Organizacionales Tradicionales</h3>
+                    <p>Las estructuras organizacionales contemporáneas han evolucionado significativamente para responder a entornos empresariales cada vez más dinámicos y complejos. La digitalización, la globalización y la volatilidad del mercado han impulsado una transformación hacia modelos más flexibles, colaborativos y adaptativos que priorizan la agilidad sobre la estabilidad jerárquica.</p>
+
+
+                    <h3 class="subsection-title">3.1 Estructuras Organizacionales Tradicionales</h3>
                     <div class="content-block">
                         <h4>Estructura Funcional</h4>
                         <p>Agrupa a especialistas en actividades similares (finanzas, marketing, producción), permitiendo economías de escala y especialización técnica.</p>
@@ -152,11 +183,8 @@
                         <h4>Estructura Matricial</h4>
                         <p>Combina las formas funcional y por productos, creando una doble línea de autoridad para coordinar tareas complejas e interdependientes.</p>
                     </div>
-                    <div class="figure">
-                        <img src="https://via.placeholder.com/700x400?text=Figura+4:+Tipos+de+Estructuras+Organizacionales" alt="Tipos">
-                        <p class="figure-caption"><strong>Figura 4:</strong> Comparación de estructuras organizacionales: funcional, divisional y matricial. Se observan las diferencias en jerarquía y líneas de autoridad. Fuente: Adaptado de Chiavenato (2009).</p>
-                    </div>
-                    <h3 class="subsection-title">3.3 Nuevas Tendencias: Organizaciones en Red y Virtuales</h3>
+
+                    <h3 class="subsection-title">3.2 Nuevas Tendencias: Organizaciones en Red y Virtuales</h3>
                     <p>Las organizaciones modernas están abandonando las jerarquías rígidas en favor de modelos más ágiles. Según Henry Mintzberg, una organización se compone de elementos clave como el ápice estratégico y el núcleo de operaciones, pero las tendencias actuales apuntan hacia la adhocracia y las estructuras en red.</p>
                     <div class="content-block">
                         <h4>Organización en Red</h4>
@@ -166,85 +194,70 @@
                         <h4>Organización Virtual</h4>
                         <p>Permite que las personas colaboren sin coincidir físicamente en tiempo o espacio, utilizando la tecnología de la información como sistema nervioso central.</p>
                     </div>
-                    <div class="figure">
-                        <img src="https://via.placeholder.com/700x350?text=Figura+5:+Organizaciones+en+Red+y+Virtuales" alt="Redes">
-                        <p class="figure-caption"><strong>Figura 5:</strong> Modelo de organización en red y virtual. Se representa la conexión entre nodos operativos y el núcleo estratégico sin fronteras físicas. Fuente: Elaboración propia.</p>
+
+                    <h3 class="subsection-title">3.3 Caso de Estudio: Resiliencia y Rediseño Organizacional ante la Crisis</h3>
+                    <p>Para comprender de manera práctica cómo las organizaciones aplican estos conceptos teóricos ante entornos volátiles, se presenta el siguiente caso real del oriente venezolano:</p>
+                    
+                    <div class="content-block" style="background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #f57f17;">
+                        <h4>Caso Vikingos: De Tienda de Música a Panadería</h4>
+                        
+                        <p><strong>Contexto y Escala Operativa:</strong> La empresa Vikingos se consolidó como un referente en el sector cultural y comercial del oriente venezolano, específicamente en la ciudad de Puerto La Cruz, estado Anzoátegui. Con una estructura robusta que incluía múltiples sucursales, la organización se especializaba en la comercialización y, fundamentalmente, en el servicio técnico especializado para la reparación de instrumentos musicales. Su diseño organizacional original era de corte funcional y especializado, permitiendo gestionar un inventario complejo y mano de obra técnica calificada en un entorno de mercado maduro.</p>
+                        
+                        <p><strong>El Choque Externo:</strong> La declaración de la pandemia de COVID-19 en marzo de 2020 y las consecuentes medidas de cuarentena radical en Venezuela impusieron un escenario de incertidumbre extrema. Para una empresa de la magnitud de Vikingos, el cese de actividades no esenciales supuso un riesgo inminente de colapso financiero. El mercado de la música y los servicios de reparación se volvieron inexistentes frente a la prioridad ciudadana de adquirir bienes de subsistencia básica en un contexto económico ya de por sí volátil.</p>
+                        
+                        <p><strong>Transformación Estructural y Pivotaje Estratégico:</strong> Ante la naturaleza errática del entorno, la dirección de Vikingos ejecutó una de las maniobras de rediseño organizacional más drásticas documentadas en el comercio local: el paso de una tienda de música a una panadería. Esta transición no fue solo comercial, sino estructural, implicando:</p>
+                        <ul>
+                            <li><strong>Reingeniería de Procesos:</strong> La infraestructura de las sucursales en Puerto La Cruz, diseñadas para la acústica y exhibición, fue readecuada para albergar hornos y áreas de despacho de alimentos.</li>
+                            <li><strong>Reconversión del Capital Humano:</strong> El personal técnico, acostumbrado a la precisión de la reparación de instrumentos, debió adaptar sus competencias hacia procesos de producción alimentaria y atención masiva de clientes, demostrando una flexibilidad operativa notable.</li>
+                            <li><strong>Descentralización de Decisiones:</strong> La magnitud de tener múltiples sedes requirió un modelo de gestión más ágil para cumplir con los horarios restringidos y las normativas sanitarias locales.</li>
+                        </ul>
+                        
+                        <p><strong>Análisis desde la Teoría Organizacional:</strong> Desde la perspectiva de Burns y Stalker (1961), Vikingos transitó de una estructura mecánica (orientada a la eficiencia en un mercado estable) a una estructura orgánica y adaptativa. Este caso ejemplifica la aplicación práctica de la Teoría de la Contingencia de Donaldson (2001): el diseño organizacional no es estático, sino que debe "ajustarse" a los factores externos. Al reconocer que el entorno en Venezuela había cambiado permanentemente las prioridades de consumo, la empresa priorizó la supervivencia organizacional sobre la identidad de marca original. La transformación de Vikingos demuestra que, en situaciones de crisis, la capacidad de reevaluar el diseño y el propósito de la organización es el único mecanismo efectivo para garantizar la continuidad del negocio y el mantenimiento de los puestos de trabajo.</p>
                     </div>
+
                 </section>
                 <section>
                     <h2 class="section-title">4. Factores de Diseño Organizacional</h2>
-                    <p>[Añade aquí los factores de contingencia que influyen en el diseño organizacional: entorno, tecnología, estrategia, tamaño, cultura organizacional, etc.]</p>
+                    <p>El diseño organizacional óptimo no puede determinarse aisladamente, sino que debe considerar múltiples factores contextuales que interactúan entre sí. La teoría de la contingencia establece que la efectividad organizacional depende de la congruencia entre la estructura y estos factores externos e internos.</p>
+                    
                     <div class="content-block">
                         <h4>Factores de Contingencia</h4>
                         <ul>
-                            <li><strong>Entorno:</strong> Estabilidad, complejidad e incertidumbre del mercado</li>
-                            <li><strong>Tecnología:</strong> Sistemas de producción y comunicación disponibles</li>
-                            <li><strong>Estrategia:</strong> Objetivos y planes de la organización</li>
-                            <li><strong>Tamaño:</strong> Número de empleados y nivel de complejidad</li>
-                            <li><strong>Cultura:</strong> Valores y creencias organizacionales</li>
+                            <li><strong>Entorno:</strong> Las organizaciones que operan en entornos estables tienden a adoptar estructuras mecanicistas, mientras que aquellas en entornos dinámicos requieren estructuras orgánicas más flexibles. La incertidumbre ambiental, complejidad y munificencia son dimensiones clave que afectan esta relación.</li>
+                            <li><strong>Tecnología:</strong> La naturaleza de la tecnología empleada en producción y servicios determina la estructura de coordinación requerida. Tecnologías rutinizadas favorecen estructuras jerárquicas, mientras que tecnologías no rutinarias demandan mayor flexibilidad y comunicación horizontal.</li>
+                            <li><strong>Estrategia:</strong> La estrategia empresarial debe alinearse con la estructura organizacional. Las estrategias de diferenciación requieren estructuras descentralizadas y adaptativas, mientras que estrategias de liderazgo en costos pueden funcionar con estructuras más centralizadas y eficientes.</li>
+                            <li><strong>Tamaño:</strong> A medida que las organizaciones crecen, tienden a desarrollar mayor especialización, formalización y complejidad jerárquica. Sin embargo, el tamaño óptimo de cada nivel jerárquico sigue límites cognitivos que afectan la eficacia de coordinación.</li>
+                            <li><strong>Cultura:</strong> La cultura organizacional moldea las preferencias de estructura. Culturas que valoran la innovación y el riesgo toleran estructuras orgánicas, mientras que culturas conservadoras prefieren estructuras estables y predecibles.</li>
                         </ul>
                     </div>
-                    <div class="figure">
-                        <img src="https://via.placeholder.com/700x400?text=Figura+6:+Factores+de+Contingencia" alt="Contingencia">
-                        <p class="figure-caption"><strong>Figura 6:</strong> Factores de contingencia que determinan la estructura organizacional óptima. Fuente: Adaptado de Donaldson (2001).</p>
-                    </div>
+
+
                 </section>
                 <section>
                     <h2 class="section-title">5. Conclusiones</h2>
-                    <p>[Sustituye con tus conclusiones. Resume los hallazgos principales y sus implicaciones para la práctica del diseño organizacional.]</p>
+                    <p>El análisis realizado demuestra que el diseño organizacional constituye un elemento fundamental para la competitividad y sostenibilidad empresarial en el entorno contemporáneo. Las organizaciones exitosas son aquellas capaces de adaptar dinámicamente su arquitectura estructural a las condiciones cambiantes del entorno, aprovechando al máximo sus capacidades humanas y tecnológicas.</p>
+                    
                     <div class="content-block">
-                        <h4>Puntos Clave</h4>
-                        <p>En conclusión, no existe una estructura organizacional única u óptima para todas las empresas; el diseño más adecuado depende de factores de contingencia como el entorno, la tecnología y la estrategia.</p>
-                        <p>Mientras que las estructuras tradicionales proporcionaron orden y control durante la era industrial, la era de la información exige flexibilidad, trabajo en equipo y una visión sistémica.</p>
-                        <p>El éxito de las organizaciones actuales reside en su capacidad para transformarse en entidades de aprendizaje que valoran el capital intelectual sobre los activos tangibles.</p>
+                        <h4>Hallazgos Principales</h4>
+                        <p><strong>1. Evolución Paradigmática:</strong> La transición del modelo mecanicista al orgánico refleja una transformación más profunda en los valores organizacionales: de la eficiencia basada en control a la efectividad fundamentada en la colaboración y el aprendizaje continuo.</p>
+                        
+                        <p><strong>2. Integración de Teorías:</strong> La síntesis de perspectivas clásicas (Weber, Taylor, Fayol, Barnard) con enfoques contemporáneos revela que ninguna teoría única puede explicar completamente la complejidad organizacional, pero su combinación ofrece un marco más completo para la toma de decisiones estructurales.</p>
+                        
+                        <p><strong>3. Contingencia como Principio Director:</strong> Los factores de contingencia no operan de forma aislada sino que interactúan entre sí. El éxito organizacional radica en identificar estas interacciones y diseñar estructuras que optimicen sinergias entre entorno, tecnología, estrategia, tamaño y cultura.</p>
+                        
+                        <p><strong>4. Adaptabilidad Estructural:</strong> Las nuevas tendencias organizacionales (redes, virtuales, adhocracias) no reemplazan completamente las estructuras clásicas, sino que las complementan. La capacidad de modular la estructura según las exigencias contextuales se convierte en una competencia crítica.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4>Implicaciones Prácticas</h4>
+                        <p>Para los directivos y consultores organizacionales, este estudio sugiere considerar el diseño estructural como un proceso continuo y participativo, no como una decisión puntual. La evaluación regular de la congruencia entre estructura y factores contingentes permite anticipar problemas y aprovechar oportunidades de mejora.</p>
+                        
+                        <p>Además, la formación de líderes debe incluir competencias sistémicas que les permitan comprender las interdependencias organizacionales y facilitar transiciones estructurales cuando sean necesarias.</p>
+                        
+                        <p>Finalmente, la medición del impacto del diseño organizacional en el desempeño debe considerar indicadores tanto cuantitativos (productividad, eficiencia) como cualitativos (compromiso, innovación, capacidad de aprendizaje).</p>
                     </div>
                 </section>
             </main>
-            <aside>
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">Datos del Artículo</h3>
-                    <div class="sidebar-content">
-                        <ul>
-                            <li><strong>Estado:</strong> Borrador</li>
-                            <li><strong>Fecha:</strong> [Fecha actual]</li>
-                            <li><strong>Palabras:</strong> [Conteo]</li>
-                            <li><strong>Figuras:</strong> 6</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">Estructura del Artículo</h3>
-                    <div class="sidebar-content">
-                        <ul>
-                            <li>1. Introducción</li>
-                            <li>2. Revisión de Enfoques</li>
-                            <li>3. Análisis de Estructuras</li>
-                            <li>4. Factores de Diseño</li>
-                            <li>5. Conclusiones</li>
-                            <li>Referencias</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">Autores Clásicos</h3>
-                    <div class="sidebar-content">
-                        <ul class="term-list">
-                            <li><strong>Mintzberg (1984)</strong><br>Tipos de estructuras</li>
-                            <li><strong>Weber (1947)</strong><br>Burocracia</li>
-                            <li><strong>Chiavenato (2009)</strong><br>Comportamiento organizacional</li>
-                            <li><strong>Burns & Stalker (1961)</strong><br>Mecanicismo vs. Organicismo</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">Notas Personales</h3>
-                    <div class="note-box">
-                        <strong>Pendiente:</strong>
-                        [Espacio para tus notas de clase e investigación]
-                    </div>
-                </div>
-                </div>
-            </aside>
         </div>
         <section class="references">
             <h2 class="ref-title">Referencias</h2>
